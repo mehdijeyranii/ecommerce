@@ -1,11 +1,5 @@
-import mongoose, { Document } from "mongoose";
-
-export interface IUser extends Document {
-  name: string;
-  email: string;
-  password: string;
-  isAdmin: boolean;
-}
+import mongoose from "mongoose";
+import { IUser } from "types/IUser";
 
 const userSchema = new mongoose.Schema<IUser>(
   {

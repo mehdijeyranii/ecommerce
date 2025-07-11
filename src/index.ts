@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db";
 import authRoutes from "./routes/authRoutes";
+import userRoutes from "./routes/userRoutes";
 
 dotenv.config();
 
@@ -17,6 +18,8 @@ app.get("/", (_req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+
+app.use("/api/users", userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
